@@ -1,0 +1,278 @@
+﻿Windows Error Reporting records for MechWarrior 3 (Application Error log).
+Exported from the Windows Application event log on the machine where the crash
+was diagnosed. Two signatures: the primary guard-page fault in Mech3.exe, and
+the secondary access violation at 0x424a424a once control flow is corrupted.
+============================================================================
+---- 2026-06-12 10:41:17 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: unknown, version: 0.0.0.0, time stamp: 0x00000000
+Exception code: 0xc0000005
+Fault offset: 0x424a424a
+Faulting process id: 0x6A98
+Faulting application start time: 0x1DCFA796C5D9138
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: unknown
+Report Id: b68146c3-4821-4625-a14c-43af0d625133
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:41:19 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000409
+Fault offset: 0x000c436f
+Faulting process id: 0x6A98
+Faulting application start time: 0x1DCFA796C5D9138
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 8ad84f73-5476-4b95-89ba-fd45218fb48d
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:41:21 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000029
+Fault offset: 0x000c436f
+Faulting process id: 0x6A98
+Faulting application start time: 0x1DCFA796C5D9138
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 0c1c490f-b221-4e14-88ee-f12d93d040d8
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:44:42 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: unknown, version: 0.0.0.0, time stamp: 0x00000000
+Exception code: 0xc0000005
+Fault offset: 0x424a424a
+Faulting process id: 0x1E20
+Faulting application start time: 0x1DCFA79E762650A
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: unknown
+Report Id: 9898a6ed-b361-4e70-900e-90ec23df8291
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:44:43 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000409
+Fault offset: 0x000c436f
+Faulting process id: 0x1E20
+Faulting application start time: 0x1DCFA79E762650A
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: b47ba597-df6e-4146-af19-5550215e0755
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:44:46 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000029
+Fault offset: 0x000c436f
+Faulting process id: 0x1E20
+Faulting application start time: 0x1DCFA79E762650A
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 7dbc1791-6ae1-4c28-8a1d-74f1b56b6fbe
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:58:09 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: unknown, version: 0.0.0.0, time stamp: 0x00000000
+Exception code: 0xc0000005
+Fault offset: 0x424a424a
+Faulting process id: 0x5B40
+Faulting application start time: 0x1DCFA7BD87D0B84
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: unknown
+Report Id: 7f95702d-716a-4729-aff2-82a45ee74f8e
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:58:11 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000409
+Fault offset: 0x000c436f
+Faulting process id: 0x5B40
+Faulting application start time: 0x1DCFA7BD87D0B84
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 64a53467-874a-438d-a699-2d487c4a2c6b
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 10:58:13 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000029
+Fault offset: 0x000c436f
+Faulting process id: 0x5B40
+Faulting application start time: 0x1DCFA7BD87D0B84
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 8a2add3e-7ea3-4c47-89b6-8ffbe950e812
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:22:38 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x64B4
+Faulting application start time: 0x1DCFA7F109C0805
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3fixup.exe
+Report Id: 229c8a1d-02e4-4b90-b093-1ed13175bdb8
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:32:59 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x6690
+Faulting application start time: 0x1DCFA80B3876E9E
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3.exe
+Report Id: 4621f1e1-dcb1-4537-b698-b50ca5b54ecb
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:33:35 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x2CA4
+Faulting application start time: 0x1DCFA80CDC0FC39
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3.exe
+Report Id: d9507a80-0685-44bc-8baa-0971e22b42e9
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:38:53 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x72FC
+Faulting application start time: 0x1DCFA818B02F4B7
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3.exe
+Report Id: 76576312-d4c6-45ed-bd37-37ba7d1302e8
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:40:15 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x5FF4
+Faulting application start time: 0x1DCFA81B2BE6015
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3.exe
+Report Id: a323d2ec-4b60-450a-9a3d-e6c427755aa3
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:41:48 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x6A28
+Faulting application start time: 0x1DCFA81F42ADEFF
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3.exe
+Report Id: bd1a080f-b30f-4096-9445-c18a1a45a0b9
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:46:03 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Exception code: 0x80000001
+Fault offset: 0x0016d4a5
+Faulting process id: 0x2600
+Faulting application start time: 0x1DCFA828CBD0192
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\Games\MechWarrior3\Mech3.exe
+Report Id: 5596716e-8c5e-408f-a50c-aa83ea2647cf
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 11:54:02 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: unknown, version: 0.0.0.0, time stamp: 0x00000000
+Exception code: 0xc0000008
+Fault offset: 0x23a069aa
+Faulting process id: 0x37FC
+Faulting application start time: 0x1DCFA83AC322EB3
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: unknown
+Report Id: b650be5a-f38a-443f-9cf3-c7a13c66f17d
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 12:30:25 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: unknown, version: 0.0.0.0, time stamp: 0x00000000
+Exception code: 0xc0000005
+Fault offset: 0x424a424a
+Faulting process id: 0x4424
+Faulting application start time: 0x1DCFA88B95F71F3
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: unknown
+Report Id: a446bccc-920d-4e54-90a5-f5ebdbc512dd
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 12:30:29 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000409
+Fault offset: 0x000c436f
+Faulting process id: 0x4424
+Faulting application start time: 0x1DCFA88B95F71F3
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 191be6d4-5f30-44ef-9401-0212608f66ef
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 12:30:30 ----
+Faulting application name: Mech3.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: ntdll.dll, version: 10.0.26100.4768, time stamp: 0x97c731d0
+Exception code: 0xc0000029
+Fault offset: 0x000c436f
+Faulting process id: 0x4424
+Faulting application start time: 0x1DCFA88B95F71F3
+Faulting application path: C:\Games\MechWarrior3\Mech3.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 488fdd96-5c8f-4b25-b702-408ab8f4c97d
+Faulting package full name: 
+Faulting package-relative application ID: 
+
+---- 2026-06-12 13:26:39 ----
+Faulting application name: Mech3fixup.exe, version: 1.2.22.0, time stamp: 0x37e82675
+Faulting module name: AVIFIL32.dll, version: 10.0.26100.1, time stamp: 0x174dd6f0
+Exception code: 0xc0000005
+Fault offset: 0x0000740d
+Faulting process id: 0x773C
+Faulting application start time: 0x1DCFA9004C40A24
+Faulting application path: C:\Games\MechWarrior3\Mech3fixup.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\AVIFIL32.dll
+Report Id: fd3ca40c-23b3-4280-b364-3307ddf56425
+Faulting package full name: 
+Faulting package-relative application ID: 
+

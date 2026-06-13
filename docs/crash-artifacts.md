@@ -25,7 +25,7 @@ Faulting module name: ntdll.dll,  Exception code: 0xc0000409 (STACK_BUFFER_OVERR
 Faulting module name: ntdll.dll,  Exception code: 0xc0000029 (INVALID_UNWIND_TARGET),            Fault offset: 0x000c436f
 ```
 
-`0x424a424a` is ASCII **`"JBJB"`** — texture/pixel data. The CPU attempted to use pixel bytes as a code/return address because exception dispatch landed on a "stack" that is really the framebuffer. This is the fingerprint of the bug.
+`0x424a424a` is the corrupted control-flow target — a repeating printable byte pattern, ASCII **`"JBJB"`**. It is **consistent with** the call stack having been overwritten by surface/texel data: a `ret`/dispatch consuming image bytes as a code address, because exception dispatch landed on a "stack" that is really the framebuffer. (This is an interpretation of the fault signature, not a proven palette entry — but `0x424a424a` is exactly the kind of value one expects when the stack region holds pixel data.)
 
 **A3 — the separate, unrelated FMV crash (documented for completeness):**
 

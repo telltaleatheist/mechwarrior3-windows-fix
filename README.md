@@ -34,9 +34,17 @@ mov  esp, [saved_esp]          ; restore the real stack pointer
 
 **dgVoodoo2** emulates video memory in system RAM and marks surface pages with the `PAGE_GUARD` attribute to perform dirty-tracking (so it knows which regions to re-upload to the GPU). Under normal rendering, every first write to a guarded page raises a guard-page exception, dgVoodoo's in-process handler clears the guard bit, records the page as dirty, and resumes. This is benign and happens thousands of times per frame.
 
-The fatal case is this blitter. When a guard-page fault fires **while ESP points into the surface**, the OS must deliver the exception by pushing a context/exception frame onto the stack — but the stack *is* the framebuffer. The dispatch writes over surface memory and/or re-faults on the bogus stack; no in-process handler can run, and the process is terminated. The `0x424a424a` ("JBJB") return-into-garbage is the signature of exception dispatch landing on a stack full of pixels.
+The fatal case is this blitter. When a guard-page fault fires **while ESP points into the surface**, exception delivery itself fails: dispatching an exception requires pushing a context/exception frame onto the stack, but the stack pointer is aimed at the framebuffer, so the dispatch writes into surface memory and/or re-faults on the bogus stack. No in-process handler — including dgVoodoo's own — can run, and the process is terminated.
+
+This mechanism is **inferred from the fault signature and the disassembly, not single-stepped** (see *Evidence* below). The chain rests on three observations: (1) the instruction at `+0x16d4a5` is a *write* through ESP, and the same function sets `ESP := surface pointer` a few instructions earlier; (2) WER records a guard-page **write** fault at exactly that instruction; (3) control flow then transfers to the unmapped address `0x424a424a` — a repeating printable byte pattern (ASCII `"JBJB"`) **consistent with** the call stack having been overwritten by surface/texel data, i.e. a `ret`/dispatch consuming pixel bytes as a code address. The `0x424a424a` value is not proven to be a specific palette entry; it is the corrupted control-flow target WER recorded, and its byte pattern is what one would expect if the "stack" were image data.
 
 dgVoodoo's `FastVideoMemoryAccess = true` (intended to hand out unguarded memory) does **not** resolve this for the surface type MW3 uses.
+
+### Evidence
+
+- **Raw OS crash records:** [`tools/output/wer-crash-records.txt`](tools/output/wer-crash-records.txt) — the guard-page fault at `Mech3.exe+0x16d4a5` (`0x80000001`) and the secondary `0x424a424a` access violation, straight from the Windows Application event log.
+- **Annotated disassembly** of the faulting routine: [`docs/crash-artifacts.md`](docs/crash-artifacts.md) (Exhibit B), regenerable with [`tools/mw3_disasm_clean.py`](tools/mw3_disasm_clean.py) — shows `mov esp, [surface]` preceding the faulting `push`.
+- **Live debugger trace:** [`tools/output/live-debugger-trace.txt`](tools/output/live-debugger-trace.txt) — 157 first-chance guard-page faults confirming dgVoodoo guard-protects the surface and the game writes to it continuously. Note: this run executes the game *under* a debugger, which absorbs the guard-page faults out-of-process, so it demonstrates the guard-page mechanism but does **not** itself reach the fatal dispatch. The fatal path is established by the disassembly + WER signature above, not by this trace.
 
 ### Fix
 Replace dgVoodoo2 with **DDrawCompat** (narzoul). DDrawCompat wraps the *real* Windows DirectDraw (still present and functional on Windows 10/11) and does **not** use guard-page dirty-tracking, so the ESP-as-framebuffer writes simply succeed and the crash mechanism cannot occur. Because MW3 imports only `ddraw.dll` for graphics, DDrawCompat's single `ddraw.dll` is sufficient — no Direct3D wrapper DLLs are needed. (dgVoodoo's `D3DImm.dll` / `D3D8.dll` / `D3D9.dll` should be removed.)
@@ -44,7 +52,7 @@ Replace dgVoodoo2 with **DDrawCompat** (narzoul). DDrawCompat wraps the *real* W
 ### Diagnostic method (for reproducibility)
 1. WER provided the deterministic faulting offset.
 2. The function at `+0x16d4a5` was disassembled (pefile + capstone) to identify the ESP-hijack blitter.
-3. A purpose-built Win32 debugger (Python `ctypes`, `DEBUG_ONLY_THIS_PROCESS` + `Wow64GetThreadContext`) attached to the game and captured the live exception stream — confirming hundreds of benign first-chance guard-page faults at other addresses (`+0x177ab7`, `+0x179809`) and isolating the fatal one to the ESP-hijacked context.
+3. A purpose-built Win32 debugger (Python `ctypes`, `DEBUG_ONLY_THIS_PROCESS` + `Wow64GetThreadContext`) attached to the game and captured the live exception stream, confirming the guard-page mechanism — hundreds of first-chance guard-page faults on dgVoodoo's surface memory (sibling blitters at `+0x177ab7`, `+0x179809`, where ESP is still a valid stack and the faults are survivable). Because a debugger absorbs these faults out-of-process, the run does not reach the fatal dispatch; the fatal path is established by combining the disassembly (Step 2) with the WER fault signature (Step 1), not by single-stepping the crash.
 
 ---
 
@@ -110,7 +118,7 @@ reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
 
 - **No Windows compatibility-mode shims** on the game EXE (Win95/98/XP modes break DirectDraw wrappers). The only useful flag is **High-DPI scaling override = Application**, which corrects mouse coordinate mapping when a low render resolution is scaled to a high-DPI desktop.
 - **Community no-CD / timing patch:** running through the community "zipfixup" wrapper (which patches `GetTickCount` timing inaccuracies and adds target-box bounds checking) is recommended for the base game. It does not recognize the *Pirate's Moon* executable, but the DDrawCompat frame cap covers speed there.
-- **Runtime DLLs:** MW3/PM need `MFC42.dll`, `MSVCP60.dll`/`MSVCP50.dll`, and `MSVCRT.dll`; these are present in `SysWOW64` on modern Windows.
+- **Runtime DLLs:** the base-game uses `MSVCP50.dll` (VC++ 5.0) while *Pirate's Moon* uses `MSVCP60.dll`; both use `MFC42.dll` and `MSVCRT.dll`. `MFC42`, `MSVCP60`, and `MSVCRT` are generally present in `SysWOW64` on modern Windows, but **`MSVCP50.dll` (VC++ 5.0) frequently is not** — the retail base-game install ships it in the game folder, so stripped/RIP copies that omit it will fail to launch until `MSVCP50.dll` is dropped into the game directory. (This is the missing-DLL symptom older guides report.)
 - **Pirate's Moon** is the same engine and requires the identical recipe (DDrawCompat + frame cap + Indeo codec + valid videos) plus its own `EP1` registry key.
 
 ---
