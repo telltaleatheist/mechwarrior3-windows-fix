@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+; MechWarrior 3: Pirate's Moon (standalone EP1) - 32-bit app -> WOW6432Node
+; InstallOptions 0x50707 includes the software-render-component flag that
+; prevents the "software render files not installed" video error.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\MicroProse\MechWarrior 3 EP1]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\MicroProse\MechWarrior 3 EP1\1.0]
+"Program"="C:\\Games\\PiratesMoon\\game\\"
+"InstallPath"="C:\\Games\\PiratesMoon\\game\\"
+"SrcDir"="C:\\Games\\PiratesMoon\\game\\"
+"Version"="1.0"
+"InstallOptions"=dword:00050707
+"Norend"=dword:00000001

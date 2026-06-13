@@ -1,0 +1,280 @@
+==========================================================================================
+Function 0x564080 (slot [0x800828]) - writes 0x72c278
+==========================================================================================
+0x00564080  55                     push ebp
+0x00564081  8bec                   mov ebp, esp
+0x00564083  83ec08                 sub esp, 8
+0x00564086  8955f8                 mov dword ptr [ebp - 8], edx
+0x00564089  894dfc                 mov dword ptr [ebp - 4], ecx
+0x0056408c  8b4df8                 mov ecx, dword ptr [ebp - 8]
+0x0056408f  8b45fc                 mov eax, dword ptr [ebp - 4]
+0x00564092  8bd0                   mov edx, eax
+0x00564094  8b2578c27200           mov esp, dword ptr [0x72c278]
+0x0056409a  c1e010                 shl eax, 0x10
+0x0056409d  03e1                   add esp, ecx
+0x0056409f  0bc2                   or eax, edx
+0x005640a1  03e1                   add esp, ecx
+0x005640a3  d1e9                   shr ecx, 1
+0x005640a5  7302                   jae 0x5640a9
+0x005640a7  6650                   push ax
+0x005640a9  d1e9                   shr ecx, 1
+0x005640ab  7301                   jae 0x5640ae
+0x005640ad  50                     push eax
+0x005640ae  7405                   je 0x5640b5
+0x005640b0  50                     push eax
+0x005640b1  50                     push eax
+0x005640b2  49                     dec ecx
+0x005640b3  75fb                   jne 0x5640b0
+0x005640b5  8be5                   mov esp, ebp
+0x005640b7  5d                     pop ebp
+0x005640b8  c3                     ret 
+0x005640b9  90                     nop 
+0x005640ba  90                     nop 
+0x005640bb  90                     nop 
+0x005640bc  90                     nop 
+0x005640bd  90                     nop 
+0x005640be  90                     nop 
+0x005640bf  90                     nop 
+0x005640c0  53                     push ebx
+0x005640c1  55                     push ebp
+0x005640c2  8b2d78c27200           mov ebp, dword ptr [0x72c278]
+0x005640c8  56                     push esi
+0x005640c9  57                     push edi
+0x005640ca  83fa07                 cmp edx, 7
+0x005640cd  7e61                   jle 0x564130
+0x005640cf  81fafc000000           cmp edx, 0xfc
+0x005640d5  7c06                   jl 0x5640dd
+0x005640d7  66894d00               mov word ptr [ebp], cx
+0x005640db  eb53                   jmp 0x564130
+0x005640dd  0fbf5d00               movsx ebx, word ptr [ebp]
+0x005640e1  8bf3                   mov esi, ebx
+0x005640e3  8bc1                   mov eax, ecx
+0x005640e5  81e6007c0000           and esi, 0x7c00
+0x005640eb  25007c0000             and eax, 0x7c00
+0x005640f0  2bc6                   sub eax, esi
+0x005640f2  8bf1                   mov esi, ecx
+0x005640f4  8bfb                   mov edi, ebx
+0x005640f6  81e6e0030000           and esi, 0x3e0
+0x005640fc  81e7e0030000           and edi, 0x3e0
+0x00564102  83e31f                 and ebx, 0x1f
+0x00564105  2bf7                   sub esi, edi
+0x00564107  8bf9                   mov edi, ecx
+0x00564109  83e71f                 and edi, 0x1f
+0x0056410c  0faff2                 imul esi, edx
+0x0056410f  2bfb                   sub edi, ebx
+0x00564111  0fafc2                 imul eax, edx
+0x00564114  0faffa                 imul edi, edx
+0x00564117  c1fe08                 sar esi, 8
+0x0056411a  c1f808                 sar eax, 8
+0x0056411d  83e6e0                 and esi, 0xffffffe0
+0x00564120  2500fcffff             and eax, 0xfffffc00
+0x00564125  c1ff08                 sar edi, 8
+0x00564128  03fe                   add edi, esi
+0x0056412a  03f8                   add edi, eax
+0x0056412c  66017d00               add word ptr [ebp], di
+0x00564130  8b442414               mov eax, dword ptr [esp + 0x14]
+0x00564134  83c502                 add ebp, 2
+0x00564137  48                     dec eax
+0x00564138  89442414               mov dword ptr [esp + 0x14], eax
+0x0056413c  758c                   jne 0x5640ca
+0x0056413e  5f                     pop edi
+0x0056413f  5e                     pop esi
+0x00564140  5d                     pop ebp
+0x00564141  5b                     pop ebx
+0x00564142  c20400                 ret 4
+0x00564145  90                     nop 
+0x00564146  90                     nop 
+0x00564147  90                     nop 
+0x00564148  90                     nop 
+0x00564149  90                     nop 
+0x0056414a  90                     nop 
+0x0056414b  90                     nop 
+0x0056414c  90                     nop 
+0x0056414d  90                     nop 
+0x0056414e  90                     nop 
+0x0056414f  90                     nop 
+0x00564150  53                     push ebx
+0x00564151  8b1d78c27200           mov ebx, dword ptr [0x72c278]
+0x00564157  55                     push ebp
+0x00564158  56                     push esi
+0x00564159  57                     push edi
+0x0056415a  83fa03                 cmp edx, 3
+0x0056415d  7e6e                   jle 0x5641cd
+0x0056415f  81fafc000000           cmp edx, 0xfc
+0x00564165  7c05                   jl 0x56416c
+0x00564167  66890b                 mov word ptr [ebx], cx
+0x0056416a  eb61                   jmp 0x5641cd
+0x0056416c  0fbf3b                 movsx edi, word ptr [ebx]
+0x0056416f  8bc7                   mov eax, edi
+0x00564171  8bf1                   mov esi, ecx
+0x00564173  2500f80000             and eax, 0xf800
+0x00564178  81e600f80000           and esi, 0xf800
+0x0056417e  2bf0                   sub esi, eax
+0x00564180  8bef                   mov ebp, edi
+0x00564182  8bc1                   mov eax, ecx
+0x00564184  81e5e0070000           and ebp, 0x7e0
+0x0056418a  25e0070000             and eax, 0x7e0
+0x0056418f  0faff2                 imul esi, edx
+0x00564192  2bc5                   sub eax, ebp
+0x00564194  0fafc2                 imul eax, edx
+0x00564197  c1f808                 sar eax, 8
+0x0056419a  c1fe08                 sar esi, 8
+0x0056419d  24e0                   and al, 0xe0
+0x0056419f  81e600f8ffff           and esi, 0xfffff800
+0x005641a5  a900000080             test eax, 0x80000000
+0x005641aa  7404                   je 0x5641b0
+0x005641ac  0c20                   or al, 0x20
+0x005641ae  eb02                   jmp 0x5641b2
+0x005641b0  24df                   and al, 0xdf
+0x005641b2  03fe                   add edi, esi
+0x005641b4  8bf1                   mov esi, ecx
+0x005641b6  8bef                   mov ebp, edi
+0x005641b8  83e61f                 and esi, 0x1f
+0x005641bb  83e51f                 and ebp, 0x1f
+0x005641be  2bf5                   sub esi, ebp
+0x005641c0  0faff2                 imul esi, edx
+0x005641c3  c1fe08                 sar esi, 8
+0x005641c6  03f0                   add esi, eax
+0x005641c8  03fe                   add edi, esi
+0x005641ca  66893b                 mov word ptr [ebx], di
+0x005641cd  8b442414               mov eax, dword ptr [esp + 0x14]
+0x005641d1  83c302                 add ebx, 2
+0x005641d4  48                     dec eax
+0x005641d5  89442414               mov dword ptr [esp + 0x14], eax
+0x005641d9  0f857bffffff           jne 0x56415a
+0x005641df  5f                     pop edi
+0x005641e0  5e                     pop esi
+0x005641e1  5d                     pop ebp
+0x005641e2  5b                     pop ebx
+0x005641e3  c20400                 ret 4
+0x005641e6  90                     nop 
+0x005641e7  90                     nop 
+0x005641e8  90                     nop 
+0x005641e9  90                     nop 
+0x005641ea  90                     nop 
+0x005641eb  90                     nop 
+0x005641ec  90                     nop 
+0x005641ed  90                     nop 
+0x005641ee  90                     nop 
+0x005641ef  90                     nop 
+0x005641f0  0faf15d4078000         imul edx, dword ptr [0x8007d4]
+0x005641f7  668b442408             mov ax, word ptr [esp + 8]
+0x005641fc  03ca                   add ecx, edx
+0x005641fe  8b542404               mov edx, dword ptr [esp + 4]
+0x00564202  66890451               mov word ptr [ecx + edx*2], ax
+0x00564206  c20800                 ret 8
+0x00564209  90                     nop 
+0x0056420a  90                     nop 
+0x0056420b  90                     nop 
+0x0056420c  90                     nop 
+0x0056420d  90                     nop 
+0x0056420e  90                     nop 
+0x0056420f  90                     nop 
+0x00564210  8b442404               mov eax, dword ptr [esp + 4]
+0x00564214  3b08                   cmp ecx, dword ptr [eax]
+0x00564216  7c17                   jl 0x56422f
+0x00564218  3b4808                 cmp ecx, dword ptr [eax + 8]
+0x0056421b  7f12                   jg 0x56422f
+0x0056421d  3b5004                 cmp edx, dword ptr [eax + 4]
+0x00564220  7c0d                   jl 0x56422f
+0x00564222  3b500c                 cmp edx, dword ptr [eax + 0xc]
+0x00564225  7f08                   jg 0x56422f
+0x00564227  b801000000             mov eax, 1
+0x0056422c  c20400                 ret 4
+0x0056422f  33c0                   xor eax, eax
+0x00564231  c20400                 ret 4
+0x00564234  90                     nop 
+0x00564235  90                     nop 
+0x00564236  90                     nop 
+0x00564237  90                     nop 
+0x00564238  90                     nop 
+0x00564239  90                     nop 
+0x0056423a  90                     nop 
+0x0056423b  90                     nop 
+0x0056423c  90                     nop 
+0x0056423d  90                     nop 
+0x0056423e  90                     nop 
+0x0056423f  90                     nop 
+0x00564240  83ec0c                 sub esp, 0xc
+0x00564243  56                     push esi
+0x00564244  57                     push edi
+0x00564245  8b3d68b65b00           mov edi, dword ptr [0x5bb668]   ; -> MSVCRT.dll!rand
+0x0056424b  89542410               mov dword ptr [esp + 0x10], edx
+0x0056424f  894c240c               mov dword ptr [esp + 0xc], ecx
+0x00564253  ffd7                   call edi
+0x00564255  db44240c               fild dword ptr [esp + 0xc]
+0x00564259  89442408               mov dword ptr [esp + 8], eax
+0x0056425d  db442408               fild dword ptr [esp + 8]
+0x00564261  d80d0ce65c00           fmul dword ptr [0x5ce60c]
+0x00564267  dcc0                   fadd st(0), st(0)
+0x00564269  d825e0e55c00           fsub dword ptr [0x5ce5e0]
+0x0056426f  d84c241c               fmul dword ptr [esp + 0x1c]
+0x00564273  d9c9                   fxch st(1)
+0x00564275  dec1                   faddp st(1)
+0x00564277  e8c4800400             call 0x5ac340
+0x0056427c  8bf0                   mov esi, eax
+0x0056427e  ffd7                   call edi
+0x00564280  db442410               fild dword ptr [esp + 0x10]
+0x00564284  8944240c               mov dword ptr [esp + 0xc], eax
+0x00564288  db44240c               fild dword ptr [esp + 0xc]
+0x0056428c  d80d0ce65c00           fmul dword ptr [0x5ce60c]
+0x00564292  dcc0                   fadd st(0), st(0)
+0x00564294  d825e0e55c00           fsub dword ptr [0x5ce5e0]
+0x0056429a  d84c241c               fmul dword ptr [esp + 0x1c]
+0x0056429e  d9c9                   fxch st(1)
+0x005642a0  dec1                   faddp st(1)
+0x005642a2  e899800400             call 0x5ac340
+0x005642a7  8b0d44c27200           mov ecx, dword ptr [0x72c244]
+0x005642ad  3b31                   cmp esi, dword ptr [ecx]
+0x005642af  7c16                   jl 0x5642c7
+0x005642b1  3b7108                 cmp esi, dword ptr [ecx + 8]
+0x005642b4  7f11                   jg 0x5642c7
+0x005642b6  3b4104                 cmp eax, dword ptr [ecx + 4]
+0x005642b9  7c0c                   jl 0x5642c7
+0x005642bb  3b410c                 cmp eax, dword ptr [ecx + 0xc]
+0x005642be  7f07                   jg 0x5642c7
+
+==========================================================================================
+Indirect calls/jumps through table slots 0x800828-0x800890
+==========================================================================================
+  slot 0x00800828 referenced at VA 0x00557bf4 (instr bytes before: c705)
+  slot 0x00800828 referenced at VA 0x0055c2ba (instr bytes before: ff15)
+  slot 0x00800828 referenced at VA 0x0055d635 (instr bytes before: ff15)
+  slot 0x00800828 referenced at VA 0x0055fa20 (instr bytes before: 0495)
+  slot 0x00800828 referenced at VA 0x0055fa58 (instr bytes before: 0c8d)
+  slot 0x00800828 referenced at VA 0x00560894 (instr bytes before: ff15)
+  slot 0x00800828 referenced at VA 0x005613a7 (instr bytes before: 1495)
+  slot 0x0080082c referenced at VA 0x00557cf6 (instr bytes before: c705)
+  slot 0x0080082c referenced at VA 0x00557d33 (instr bytes before: c705)
+  slot 0x0080082c referenced at VA 0x0055cfd0 (instr bytes before: ff15)
+  slot 0x00800830 referenced at VA 0x00557c04 (instr bytes before: c705)
+  slot 0x00800834 referenced at VA 0x00557c0e (instr bytes before: c705)
+  slot 0x00800838 referenced at VA 0x00557c18 (instr bytes before: c705)
+  slot 0x0080083c referenced at VA 0x00557c22 (instr bytes before: c705)
+  slot 0x00800840 referenced at VA 0x00557c2c (instr bytes before: c705)
+  slot 0x00800844 referenced at VA 0x00557c36 (instr bytes before: c705)
+  slot 0x00800848 referenced at VA 0x00557c40 (instr bytes before: c705)
+  slot 0x00800848 referenced at VA 0x0055fa32 (instr bytes before: 148d)
+  slot 0x0080084c referenced at VA 0x00557c4a (instr bytes before: c705)
+  slot 0x00800850 referenced at VA 0x00557c54 (instr bytes before: c705)
+  slot 0x00800854 referenced at VA 0x00557c5e (instr bytes before: c705)
+  slot 0x00800858 referenced at VA 0x00557c68 (instr bytes before: c705)
+  slot 0x0080085c referenced at VA 0x00557c72 (instr bytes before: c705)
+  slot 0x00800860 referenced at VA 0x00557c7c (instr bytes before: c705)
+  slot 0x00800864 referenced at VA 0x00557c86 (instr bytes before: c705)
+  slot 0x00800868 referenced at VA 0x00557c90 (instr bytes before: c705)
+  slot 0x0080086c referenced at VA 0x00557c9a (instr bytes before: c705)
+  slot 0x00800870 referenced at VA 0x00557ca4 (instr bytes before: c705)
+  slot 0x00800874 referenced at VA 0x00557cae (instr bytes before: c705)
+  slot 0x00800878 referenced at VA 0x00557cb8 (instr bytes before: c705)
+  slot 0x0080087c referenced at VA 0x00557cc2 (instr bytes before: c705)
+  slot 0x00800880 referenced at VA 0x00557ccc (instr bytes before: c705)
+  slot 0x00800884 referenced at VA 0x00557cd6 (instr bytes before: c705)
+  slot 0x00800888 referenced at VA 0x00557ce0 (instr bytes before: c705)
+  slot 0x0080088c referenced at VA 0x00557cea (instr bytes before: c705)
+  slot 0x00800890 referenced at VA 0x00557bfe (instr bytes before: 8935)
+  slot 0x00800890 referenced at VA 0x0055df41 (instr bytes before: 8915)
+  slot 0x00800890 referenced at VA 0x0055df5f (instr bytes before: 8915)
+  slot 0x00800890 referenced at VA 0x0055eb34 (instr bytes before: 8915)
+  slot 0x00800890 referenced at VA 0x0055eb61 (instr bytes before: 8915)
+  slot 0x00800890 referenced at VA 0x0055eb8e (instr bytes before: 8b15)
